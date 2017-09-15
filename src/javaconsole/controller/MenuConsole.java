@@ -49,34 +49,34 @@ public class MenuConsole {
             } else {
                 switch (ch) {
                     case 1:
-                        System.out.println("->> List Student <<-");
+
                         studentController.getlist();
                         break;
                     case 2:
-                        System.out.println("->> Add Student <<-");
+
                         studentController.add();
                         break;
                     case 3:
-                        System.out.println("->> Update Student <<-");
+
                         studentController.upDate();
                         break;
                     case 4:
-                        System.out.println("->> Detela Student <<-");
+
                         studentController.delete();
                         break;
                     case 5:
-                        System.out.println("->> Export Student <<-");
+
                         fHandle.exportStudent();
                         break;
                     case 6:
-                        System.out.println("->> Import Student <<-");
+
                         fHandle.importStudent();
                         break;
                     case 7:
                         System.out.println("->> Exit succees <<-");
 
                     default:
-                        System.out.println("->> Please enter number from 1 to 7 <<-");
+                        System.out.println("* Please enter number from 1 to 7 *");
                         break;
 
                 }

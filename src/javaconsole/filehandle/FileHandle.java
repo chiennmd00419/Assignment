@@ -22,7 +22,7 @@ import javaconsole.model.StudentModel;
 public class FileHandle {
 
     public void exportStudent() {
-
+System.out.println("->> Export Student <<-");
         StudentModel studentModel = new StudentModel();
         ArrayList<Student> list = studentModel.getlistStudent();
         FileWriter fw = null;
@@ -31,13 +31,13 @@ public class FileHandle {
             fw = new FileWriter("StudentList.txt");
             bw = new BufferedWriter(fw);
             for (Student student : list) {
-                bw.write("->>id" + student.getId());
+                bw.write("- Id : " + student.getId());
                 bw.newLine();
-                bw.write("->>name" + student.getName());
+                bw.write("+ name : " + student.getName());
                 bw.newLine();
-                bw.write("->>email" + student.getEmail());
+                bw.write("+ email : " + student.getEmail());
                     bw.newLine();
-                bw.write("->>phone" + student.getPhone());
+                bw.write("+ phone : " + student.getPhone());
                 bw.newLine();
             }
             System.out.println("->> Export list student success <<-");
@@ -54,6 +54,7 @@ public class FileHandle {
     }
 
     public void importStudent() {
+        System.out.println("->> Import Student <<-");
         FileReader fr = null;
         BufferedReader br = null;
         try {
@@ -68,6 +69,15 @@ public class FileHandle {
             System.out.println(e.getMessage());
         } catch (IOException ex) {
             System.out.println(ex);
+        }
+        finally{
+            try {
+                br.close();
+                fr.close();
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+            
         }
     }
 
